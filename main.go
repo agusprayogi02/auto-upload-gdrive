@@ -24,6 +24,7 @@ const (
 	credentialsInput = "credentials"
 	encodedInput     = "encoded"
 	overwrite        = "overwrite"
+	mimeType         = "mimeType"
 )
 
 func main() {
@@ -41,6 +42,11 @@ func main() {
 	folderId := githubactions.GetInput(folderIdInput)
 	if folderId == "" {
 		missingInput(folderIdInput)
+	}
+
+	mimeType := githubactions.GetInput(mimeType)
+	if mimeType == "" {
+		missingInput(mimeType)
 	}
 
 	// get base64 encoded credentials argument from action input
@@ -134,7 +140,7 @@ func main() {
 			uploadNewFile = false
 			for _, driveFile := range filesQueryCallResult.Files {
 				_, err = svc.Files.
-					Update(driveFile.Id, &drive.File{Name: name}).
+					Update(driveFile.Id, &drive.File{Name: name, MimeType: mimeType}).
 					SupportsAllDrives(true).
 					Media(file).
 					Do()
@@ -149,8 +155,9 @@ func main() {
 	}
 	if uploadNewFile {
 		f := &drive.File{
-			Name:    name,
-			Parents: []string{folderId},
+			Name:     name,
+			MimeType: mimeType,
+			Parents:  []string{folderId},
 		}
 		githubactions.Debugf("Creating file %s in folder %s", f.Name, folderId)
 		_, err = svc.Files.Create(f).Media(file).SupportsAllDrives(true).Do()
