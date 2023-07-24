@@ -1,4 +1,4 @@
-module gdrive-upload-action
+module auto-upload-gdrive
 
 go 1.18
 

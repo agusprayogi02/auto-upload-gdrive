@@ -1,4 +1,4 @@
-name: "gdrive-upload-action"
+name: "auto-upload-gdrive"
 description: "Upload a file to Google Drive"
 author: "Mathis Van Eetvelde"
 inputs:

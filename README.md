@@ -69,6 +69,7 @@ jobs:
           folderId: ${{ secrets.folderId }}
           credentials: ${{ secrets.credentials }}
           encoded: false
+          mimeType: application/vnd.android.package-archive
 ```
 
 ## Inputs
