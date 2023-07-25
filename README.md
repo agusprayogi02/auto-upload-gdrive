@@ -1,5 +1,4 @@
 [![build](https://github.com/agusprayogi02/auto-upload-gdrive/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/agusprayogi02/auto-upload-gdrive/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/agusprayogi02/auto-upload-gdrive)](https://goreportcard.com/report/github.com/agusprayogi02/auto-upload-gdrive)
 
 # Github action that uploads files to Google Drive
 
@@ -107,7 +106,7 @@ Required: **NO**
 ### ``mimeType``
 Required: **YES**
 
-the mimeType of the file you want to upload
+the mimeType of the file you want to upload. Example value
 `application/vnd.android.package-archive`
 
 ## Contributing
