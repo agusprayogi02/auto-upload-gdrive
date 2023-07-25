@@ -1,5 +1,5 @@
-[![build](https://github.com/mathisve/gdrive-upload-action/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/mathisve/gdrive-upload-action/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mathisve/gdrive-upload-action)](https://goreportcard.com/report/github.com/mathisve/gdrive-upload-action)
+[![build](https://github.com/agusprayogi02/auto-upload-gdrive/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/agusprayogi02/auto-upload-gdrive/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/agusprayogi02/auto-upload-gdrive)](https://goreportcard.com/report/github.com/agusprayogi02/auto-upload-gdrive)
 
 # Github action that uploads files to Google Drive
 
@@ -62,7 +62,7 @@ jobs:
           zip -r archive.zip *
 
       - name: Upload to gdrive
-        uses: mathisve/gdrive-upload-action@main
+        uses: mathisve/auto-upload-gdrive@v1
         with:
           filename: archive.zip
           name: documentation.zip
@@ -104,7 +104,11 @@ Whether or not the credentials string is base64 encoded. Defaults to `true`.
 ### ``overwrite``
 Required: **NO**
 
-If you want to overwrite all existing files in the drive folder that match the given `name`, with the current file content. Defaults to `false`
+### ``mimeType``
+Required: **YES**
+
+the mimeType of the file you want to upload
+`application/vnd.android.package-archive`
 
 ## Contributing
 
