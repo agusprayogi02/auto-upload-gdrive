@@ -61,7 +61,7 @@ jobs:
           zip -r archive.zip *
 
       - name: Upload to gdrive
-        uses: mathisve/auto-upload-gdrive@v1
+        uses: agusprayogi02/auto-upload-gdrive@v1.0.1
         with:
           filename: archive.zip
           name: documentation.zip
